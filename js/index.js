@@ -1,6 +1,6 @@
 /* eslint-env browser, commonjs */
 /* global React */
-/* eslint-disable no-debugger, no-console */
+/* --eslint-disable no-debugger, no-console */
 
 // Slomux - реализация Flux, в которой, как следует из нвазвания, что-то сломано.
 // Нужно выяснить что здесь сломано
@@ -73,7 +73,6 @@ var createStore = function (reducer, initialState) {
 var connect = function (mapStateToProps, mapDispatchToProps) {
   return function (Component) {
     return /** @class */ (function (superComponent) {
-      console.log(Component, superComponent);
       function someClass() {
         var _this = superComponent !== null && superComponent.apply(this, arguments) || this;
         _this.handleChange = function () {
