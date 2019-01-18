@@ -2,7 +2,7 @@
  vim: ft=markdown:
 -->
 
-# itu-library-1812
+# csssr-slomux
 
 ## Project docs
 
@@ -13,18 +13,11 @@
 ## Config files
 
 - `package.json`
-- ~~`gulpfile.js`~~
-- `.bemrc.js`
-- `config-overrides.js`
-- `jest.config.js`
 - `.lvimrc`
 - `tsconfig.json` (set/reset `noUnusedLocals`, `noUnusedParameters` for production/development)
 - `tslint.yaml`
 - `.eslintrc.yml`
 - '.stylelintrc'
-- `src/config/__css/config__css.js`
-- `src/config/__site/config__site.js`
-- `src/config/__pages/config__pages.js`
 
 ## Module extensions
 
@@ -32,55 +25,4 @@
 
 ## Core components
 
-- `src/components/layout/App/App.tsx`
-- `src/components/layout/Main/Main.tsx`
-
-## dev-data
-
-- [Original app link](https://www.itu.int/en/itu-d/pages/publications.aspx)
-- [Original task msg](https://mail.yandex.ru/?uid=814904&login=dmia#message/166070236259313985)
-
-- [Dev-data repository](https://github.com/lilliputten/itu-library-1812-dev-data) (submodule'd to `.ev-data/`)
-- `.dev-data/itu-d/apis/publications/all.json`
-- `.dev-data/!Work/181230-data/README.md`
-
-Single book entry data sample:
-
-- `!Work/181230-single-item-data/item-data.yml`
-- `!Work/181230-single-item-data/README.md`
-
-## Core node modules
-
-bem-react-core-3:
-
-- `node_modules/@bem-react/classname/README.md`
-- `node_modules/@bem-react/di/README.md`
-
-- `node_modules/@bem-react/core/build/cjs/core.development.js`
-- `node_modules/@bem-react/classname/build/cjs/classname.development.js`
-- `node_modules/@bem-react/di/build/cjs/di.development.js`
-
-## Verbose commands
-
-- `node node_modules/tslint/lib/tslintCli.js --help`
-
-## Tips
-
-### Typescript typings
-
-```shell
-npm i -D @types/react-router-dom
-```
-
-### 'value is never used' errors
-
-For enabling/disabling errors/warnings `...is declared but its value is never
-used...` set to true/false next strings in `tsconfig.json`:
-```js
-{
-  // ...
-  "noUnusedLocals": true,
-  "noUnusedParameters": true,
-  // ...
-}
-```
+- `js/index.js`
