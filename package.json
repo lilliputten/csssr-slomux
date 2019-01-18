@@ -4,6 +4,7 @@
   "description": "CSSSR test react project",
   "main": "index.html",
   "author": "lilliputten <igor@lilliputten.ru> (http://lilliputten.ru)",
+  "license": "unknown",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lilliputten/csssr-slomux.git"
@@ -18,7 +19,6 @@
     "react",
     "javascript"
   ],
-  "license": "MIT",
   "dependencies": {
     "eslint": "^5.12.0",
     "npm-run-all": "^4.1.5",
