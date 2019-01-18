@@ -17,7 +17,15 @@ const createStore = (reducer, initialState) => {
 
   const subscribe = listener => listeners.push(listener)
 
-  return { getState, dispatch, subscribe }
+  const unsubscribe = listener => {
+    const p = listeners.indexOf(listener)
+    if (p !== -1) {
+      listeners.splice(p, 1)
+    }
+    return listeners
+  }
+
+  return { getState, dispatch, subscribe, unsubscribe }
 }
 
 const connect = (mapStateToProps, mapDispatchToProps) =>
@@ -26,14 +34,18 @@ const connect = (mapStateToProps, mapDispatchToProps) =>
       render() {
         return (
           <Component
-            {...mapStateToProps(store.getState(), this.props)}
-            {...mapDispatchToProps(store.dispatch, this.props)}
+            {...mapStateToProps(window.store.getState(), this.props)}
+            {...mapDispatchToProps(window.store.dispatch, this.props)}
           />
         )
       }
 
       componentDidMount() {
-        store.subscribe(this.handleChange)
+        window.store.subscribe(this.handleChange)
+      }
+
+      componentWillUnmount() {
+        window.store.unsubscribe(this.handleChange)
       }
 
       handleChange = () => {
