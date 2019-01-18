@@ -98,7 +98,7 @@ class ToDoComponent extends React.Component {
           />
           <button onClick={this._addTodo}>Добавить</button>
           <ul>
-            {this.props.todos.map((todo, idx) => <li>{todo}</li>)}
+            {this.props.todos.map((todo, idx) => <li key={idx}>{todo}</li>)}
           </ul>
         </div>
       </div>
