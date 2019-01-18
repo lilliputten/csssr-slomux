@@ -45,7 +45,7 @@
     "typescript": "^3.2.4",
     "webpack": "^4.16.5",
     "webpack-cli": "3.1.0",
-    "webpack-dev-server": "3.1.5"
+    "webpack-dev-server": "3.1.11"
   },
   "scripts": {
     "eslint": "echo --JS source code linting-- && eslint . --ext .js && echo No JS problems found",
