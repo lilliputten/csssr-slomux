@@ -2,8 +2,10 @@
 
 let g:ale_linters = {
 \   'javascript': [ 'eslint' ],
-\   'typescript': [ 'tsserver' ],
+\   'typescript': [ 'tslint' ],
 \}
 
-" let g:ale_css_stylelint_options = '--syntax scss'
-" let g:ale_stylus_stylelint_options = '--syntax scss'
+" \   'typescript': [ 'tsserver' ],
+
+let g:ale_css_stylelint_options = '--syntax scss'
+let g:ale_stylus_stylelint_options = '--syntax scss'

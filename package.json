@@ -20,16 +20,40 @@
     "javascript"
   ],
   "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@types/react": "15.6.1",
+    "@types/react-dom": "15.5.8",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-webpack-plugin": "0.1.19",
     "eslint": "^5.12.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-react": "^7.12.4",
+    "html-webpack-plugin": "3.2.0",
     "npm-run-all": "^4.1.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "serve": "^10.1.1"
+    "serve": "^10.1.1",
+    "stylelint": "^9.10.0",
+    "stylelint-scss": "^3.5.1",
+    "ts-loader": "4.4.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4",
+    "webpack": "^4.16.5",
+    "webpack-cli": "3.1.0",
+    "webpack-dev-server": "3.1.5"
   },
   "scripts": {
     "eslint": "echo --JS source code linting-- && eslint . --ext .js && echo No JS problems found",
-    "test": "npm-run-all eslint",
+    "tslint": "echo --TS source code linting-- && tslint -p . --format stylish --exclude \"**/*.{js,jsx}\" && echo No TS problems found",
+    "lint": "npm-run-all eslint tslint",
     "serve": "echo --Run static server-- && serve -s .",
+    "build": "echo --Build TS code-- && webpack -p",
+    "server": "echo --Start dev server for TS code-- && webpack-dev-server -d --content-base ./public",
     "help": "echo --List all available script commands-- && npm-package-user-scripts-list"
   }
 }

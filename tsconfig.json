@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+
+    "sourceMap": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es6"
+    ],
+
+    "allowJs": true,
+
+    "rootDir": "src",
+    "baseUrl": "./src",
+
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "downlevelIteration": true,
+
+    "pretty": true
+
+  },
+  "include": [
+    "src"
+  ],
+  "compileOnSave": false
+}

@@ -1,0 +1,31 @@
+# @version 2018.11.28, 05:32
+defaultSeverity: error
+linterOptions:
+  format: "stylish"
+extends:
+  - "tslint:recommended"
+  - "tslint-react"
+rules:
+  # NOTE: Set `no-console`, `no-debugger` in `true` for production!
+  no-console: true
+  no-debugger: true
+  # quotemark: false
+  quotemark:
+    - true
+    - "single"
+    - "jsx-double"
+  max-classes-per-file: false
+  jsx-no-multiline-js: false
+  jsx-no-lambda: false
+  object-literal-sort-keys: false
+  trailing-comma: false # [true, {multiline: "never", singleline: "never"}]
+  only-arrow-functions: false
+  jsx-boolean-value: false
+  object-literal-key-quotes: false
+  variable-name: false
+  forin: false
+  no-var-requires: false
+  ordered-imports: false
+  tslint.jsEnable: false
+  member-ordering: false
+  no-empty-interface: false

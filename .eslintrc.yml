@@ -5,14 +5,19 @@ env:
   commonjs: true
   es6: true
   # node: true
-extends: 'eslint:recommended'
+extends:
+  - 'eslint:recommended'
+  - 'plugin:react/recommended'
+plugins:
+  - 'import'
+  - 'react'
 parserOptions:
-  # ecmaVersion: 2018
-  ecmaVersion: 5
+  ecmaVersion: 2018
+  # ecmaVersion: 5
   sourceType: module
-  files:
-    -
-      patterns: '**/*.bemhtml'
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
 rules:
   no-unused-vars:
     - warn
