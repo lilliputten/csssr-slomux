@@ -75,8 +75,15 @@ const reducer = (state = [], action) => {
 
 // components
 class ToDoComponent extends React.Component {
-  state = {
-    todoText: ''
+
+  constructor(props){
+    super(props);
+    this.state = {
+      todoText: '',
+    }
+    // NOTE: Bind handler events
+    this._addTodo = this.addTodo.bind(this)
+    this._updateText = this.updateText.bind(this)
   }
 
   render() {
@@ -87,9 +94,9 @@ class ToDoComponent extends React.Component {
           <input
             value={this.state.todoText}
             placeholder="Название задачи"
-            onChange={this.updateText}
+            onChange={this._updateText}
           />
-          <button onClick={this.addTodo}>Добавить</button>
+          <button onClick={this._addTodo}>Добавить</button>
           <ul>
             {this.props.todos.map((todo, idx) => <li>{todo}</li>)}
           </ul>
@@ -101,13 +108,17 @@ class ToDoComponent extends React.Component {
   updateText(e) {
     const { value } = e.target
 
-    this.state.todoText = value
+    // this.state.todoText = value // NOTE: Error
+    // Correct setState call
+    this.setState({ todoText: value })
   }
 
   addTodo() {
     this.props.addTodo(this.state.todoText)
 
-    this.state.todoText = ''
+    // this.state.todoText = '' // NOTE: Error
+    // Correct setState call
+    this.setState({ todoText: '' })
   }
 }
 
