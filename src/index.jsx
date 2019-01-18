@@ -32,8 +32,10 @@ const connect = (mapStateToProps, mapDispatchToProps) =>
   Component => {
     return class extends React.Component {
       render() {
+        // NOTE: Passing props to child component
         return (
           <Component
+            {...this.props}
             {...mapStateToProps(window.store.getState(), this.props)}
             {...mapDispatchToProps(window.store.dispatch, this.props)}
           />
@@ -134,16 +136,21 @@ class ToDoComponent extends React.Component {
   }
 }
 
-const ToDo = connect(state => ({
-  todos: state,
-}), dispatch => ({
-  addTodo: text => dispatch(addTodo(text)),
-}))(ToDoComponent)
+const ToDo = connect(
+  // mapStateToProps
+  state => ({
+    todos: state,
+  }),
+  // mapDispatchToProps
+  dispatch => ({
+    addTodo: text => dispatch(addTodo(text)),
+  })
+)(ToDoComponent)
 
 // init
 ReactDOM.render(
   <Provider store={createStore(reducer, [])}>
-    <ToDo title="Список задач"/>
+    <ToDo title="Список задач" />
   </Provider>,
   document.getElementById('app')
 )
