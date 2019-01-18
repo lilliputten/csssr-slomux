@@ -102,6 +102,8 @@ var connect = function (mapStateToProps, mapDispatchToProps) {
   };
 };/*}}}*/
 
+// NOTE: Is it safe to use global store (`window.store`) object?
+
 /** Provider ** {{{
  */
 var Provider = /** @class */ (function (superComponent) {

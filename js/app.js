@@ -5,10 +5,12 @@
 
 // APP
 
-// actions
+// Actions
+
 var ADD_TODO = 'ADD_TODO';
 
 // Action creators
+
 /** addTodo ** {{{
  */
 var addTodo = function (todo) {
@@ -17,6 +19,8 @@ var addTodo = function (todo) {
     payload: todo
   });
 };/*}}}*/
+
+// Reducers...
 
 /** reducer ** {{{
  */
@@ -37,7 +41,9 @@ var reducer = function (stateList, action) {
 /** ToDoComponent ** {{{
  */
 var ToDoComponent = /** @class */ (function (superComponent) {
+
   __extends(ToDoComponent, superComponent);
+
   function ToDoComponent() {
     var _this = superComponent !== null && superComponent.apply(this, arguments) || this;
     _this.state = {
@@ -48,6 +54,7 @@ var ToDoComponent = /** @class */ (function (superComponent) {
     _this._updateText = _this.updateText.bind(_this);
     return _this;
   }
+
   ToDoComponent.prototype.render = function () {
     // NOTE: Adding binded event handlers!
     return (React.createElement('div', null,
@@ -60,21 +67,26 @@ var ToDoComponent = /** @class */ (function (superComponent) {
         }),
         React.createElement('button', { onClick: this._addTodo }, 'Добавить'),
         React.createElement('ul', null, this.props.todos.map(function (todo, idx) {
+          // TODO: To generate unique key (useless now)?
           return React.createElement('li', { key: idx }, todo);
         })))
     ));
   };
+
   ToDoComponent.prototype.updateText = function (e) {
     var value = e.target.value;
     // this.state.todoText = value; // NOTE: Error!
     this.setState({ todoText: value });
   };
+
   ToDoComponent.prototype.addTodo = function () {
     this.props.addTodo(this.state.todoText);
     // this.state.todoText = ''; // NOTE: Error!
     this.setState({ todoText: '' });
   };
+
   return ToDoComponent;
+
 }(React.Component));/*}}}*/
 
 /*{{{ Create app... */
