@@ -1,0 +1,35 @@
+{
+  "name": "csssr-slomux",
+  "version": "0.0.1",
+  "description": "CSSSR test react project",
+  "main": "index.html",
+  "author": "lilliputten <igor@lilliputten.ru> (http://lilliputten.ru)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilliputten/csssr-slomux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lilliputten/csssr-slomux/issues"
+  },
+  "homepage": "https://github.com/lilliputten/csssr-slomux#readme",
+  "keywords": [
+    "csssr",
+    "test",
+    "react",
+    "javascript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^5.12.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "serve": "^10.1.1"
+  },
+  "scripts": {
+    "eslint": "echo --JS source code linting-- && eslint . --ext .js && echo No JS problems found",
+    "test": "npm-run-all eslint",
+    "serve": "echo --Run static server-- && serve -s .",
+    "help": "echo --List all available script commands-- && npm-package-user-scripts-list"
+  }
+}
