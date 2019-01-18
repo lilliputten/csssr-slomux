@@ -59,8 +59,8 @@ var ToDoComponent = /** @class */ (function (superComponent) {
           onChange: this._updateText,
         }),
         React.createElement('button', { onClick: this._addTodo }, 'Добавить'),
-        React.createElement('ul', null, this.props.todos.map(function (todo/* , idx */) {
-          return React.createElement('li', null, todo);
+        React.createElement('ul', null, this.props.todos.map(function (todo, idx) {
+          return React.createElement('li', { key: idx }, todo);
         })))
     ));
   };
